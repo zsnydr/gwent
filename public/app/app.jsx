@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import reducers from '../reducers/index';
@@ -11,7 +12,9 @@ const middleware = routerMiddleware(history);
 
 const store = createStore(
   combineReducers(reducers),
-  applyMiddleware(middleware)
+  composeWithDevTools( // enable Redux Dev Tools, comment out if in PROD
+    applyMiddleware(middleware)
+  )
 );
 
 const App = () => (

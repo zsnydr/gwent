@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Match = () => (
-  <div>Match</div>
+  <div className="match">
+    MATCH
+  </div>
 );
 
 export default Match;

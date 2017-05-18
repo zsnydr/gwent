@@ -1,7 +1,9 @@
 import { routerReducer } from 'react-router-redux';
+import numPlayers from './numPlayers';
 
 const reducers = {
-    router: routerReducer
+  numPlayers,
+  router: routerReducer
 };
 
 export default reducers;
